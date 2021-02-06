@@ -25,19 +25,6 @@ public class Rocket : MonoBehaviour
         Rotate();
     }
 
-    private void Rotate()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.forward);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(-Vector3.forward);
-        }
-
-    }
-
     private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -53,4 +40,20 @@ public class Rocket : MonoBehaviour
             audioSource.Stop();
         }
     }
+    private void Rotate()
+    {
+        rigidBody.freezeRotation = true; // take manual control of rotation
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.forward);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-Vector3.forward);
+        }
+        rigidBody.freezeRotation = false; // resumes physics contol of rotation
+
+    }
+
+    
 }
