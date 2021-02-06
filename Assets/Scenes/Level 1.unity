@@ -128,6 +128,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615524917, guid: fa8a02afb495e5c4899a8727021e5e0d, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615524918, guid: fa8a02afb495e5c4899a8727021e5e0d, type: 3}
+      propertyPath: rcsThrust
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615524918, guid: fa8a02afb495e5c4899a8727021e5e0d, type: 3}
+      propertyPath: mainThrust
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6362136856854947368, guid: fa8a02afb495e5c4899a8727021e5e0d,
         type: 3}
       propertyPath: m_Name
