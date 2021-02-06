@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -37,12 +38,13 @@ public class Rocket : MonoBehaviour
                 // do nothing
                 print("Ok");
                 break;
-            case "Fuel":
-                print("Fuel"); // todo remove
+            case "Finish":
+                print("Hit Finish"); // todo remove
+                SceneManager.LoadScene(1);
                 break;
             default:
                 print("Dead");
-                //kill player
+                SceneManager.LoadScene(0);
                 break;
         }
     }
