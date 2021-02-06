@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Threading;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
@@ -43,9 +44,13 @@ public class Rocket : MonoBehaviour
     private void Rotate()
     {
         rigidBody.freezeRotation = true; // take manual control of rotation
+
+        float rcsThrust = 100f;
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
+            float RotationThisFrame = rcsThrust * Time.DeltaTime;
+            transform.Rotate(Vector3.forward * RotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D))
         {
